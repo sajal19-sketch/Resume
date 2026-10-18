@@ -76,6 +76,7 @@ h2{font-size:clamp(34px,5.5vw,60px);margin-bottom:12px}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .three .proj{min-height:360px;padding:18px}.three .proj h3{font-size:clamp(28px,3.2vw,40px)}
 .proj a,.more a{color:#fff;font-weight:800;font-size:13px}
+.proj a:hover,.more a:hover{text-decoration:underline}
 .more{margin-top:16px;color:var(--mute);font-size:13px}
 .steps{display:grid;gap:12px;margin:0;padding:0;list-style:none;counter-reset:s}
 .steps li{counter-increment:s;background:rgba(255,255,255,.07);border-radius:12px;padding:14px 16px 14px 56px;position:relative;line-height:1.5;font-size:14px}
@@ -132,43 +133,55 @@ h2{font-size:clamp(34px,5.5vw,60px);margin-bottom:12px}
 <section class="screen" id="story">
 <p class="kick">Episode 1</p><h2>The full story</h2>
 <p class="txt">I’m a Computer Science student at Algoma University with a passion for software development, automation and backend engineering. I like building tools that solve a real, annoying problem, then putting them online so they keep working without me.</p>
-<div class="stats"><div><b>4</b><span>projects on GitHub</span></div><div><b>3</b><span>coding languages</span></div><div><b>3</b><span>spoken languages</span></div></div>
+<div class="stats"><div><b>5</b><span>projects on GitHub</span></div><div><b>3</b><span>coding languages</span></div><div><b>3</b><span>spoken languages</span></div></div>
 <p class="txt">I am passionate about integrating AI into functional workflows. By expanding my expertise in LLM implementation, prompt engineering, and automated data parsing, I strive to build intelligent systems that streamline operations and drive innovation.</p>
 </section>
 
 <section class="screen" id="projects">
 <p class="kick">Episode 2</p><h2>My projects</h2>
 <div class="three">
+<!-- Project 1 -->
 <article class="proj" style="--g:linear-gradient(160deg,#e11d48,#7f1d1d 85%)"><span class="yr">Sept 2026</span><span class="glyph" aria-hidden="true">API</span>
 <h3>Academic API Deployment</h3>
 <p>A course registration REST API built in Python and deployed live on Render. Utilizes a Supabase PostgreSQL database to securely manage student verification records.</p>
 <div class="chips"><span>Python</span><span>REST API</span><span>PostgreSQL</span><span>Supabase</span><span>Render</span></div>
 <p class="more"><a href="https://github.com/sajal19-sketch/course-registration-api" target="_blank" rel="noopener">View on GitHub</a></p></article>
 
+<!-- Project 2 -->
 <article class="proj" style="--g:linear-gradient(160deg,#7c3aed,#1e1b4b 85%)"><span class="glyph" aria-hidden="true">DB</span>
 <h3>Immxrsive Platform</h3>
 <p>A comprehensive multi-page web platform featuring a Python backend. Includes dedicated interfaces for intake, data upload, and student project management with database integration.</p>
 <div class="chips"><span>Python</span><span>HTML/CSS</span><span>JavaScript</span><span>Database</span></div>
-<p class="more"><a href="https://github.com/sajal19-sketch/immxrsive-platform" target="_blank" rel="noopener">View on GitHub</a></p></article>
+<p class="more"><a href="https://github.com/sajal19-sketch/immxrsive-platform" target="_blank" rel="noopener">View on GitHub</a> &nbsp;·&nbsp; <a href="https://sajal19-sketch.github.io/immxrsive-platform/" target="_blank" rel="noopener">Live Website</a></p></article>
 
+<!-- Project 3 -->
 <article class="proj" style="--g:linear-gradient(160deg,#0891b2,#164e63 85%)"><span class="glyph" aria-hidden="true">SEC</span>
 <h3>Botium Toys Security Audit</h3>
 <p>A comprehensive cybersecurity audit and risk assessment mapped to NIST CSF, GDPR, and PCI DSS frameworks. Identified compliance gaps, rated overall risk, and recommended actionable remediation steps.</p>
 <div class="chips"><span>Risk assessment</span><span>NIST CSF</span><span>GDPR</span><span>PCI DSS</span></div>
 <p class="more"><a href="https://github.com/sajal19-sketch/Botium-Toys-Security-Audit" target="_blank" rel="noopener">View on GitHub</a></p></article>
 
+<!-- Project 4 -->
 <article class="proj" style="--g:linear-gradient(160deg,#f59e0b,#9a3412 85%)"><span class="yr">Aug 2026</span><span class="glyph" aria-hidden="true">EXT</span>
 <h3>Ontario Parks Monitor</h3>
 <p>A custom Chrome extension designed to monitor real-time campground availability for Ontario Parks. Built with Manifest V3 JavaScript, featuring content scripts and custom audio alert triggers.</p>
 <div class="chips"><span>JavaScript</span><span>Chrome Ext</span><span>Manifest V3</span><span>Web Scraping</span></div>
 <p class="more"><a href="https://github.com/sajal19-sketch/ontario-parks-extension" target="_blank" rel="noopener">View on GitHub</a></p></article>
 
-<!-- BharatAi Project -->
+<!-- Project 5 -->
 <article class="proj" style="--g:linear-gradient(160deg,#10b981,#047857 85%)"><span class="glyph" aria-hidden="true">AI</span>
 <h3>BharatAi</h3>
 <p>An artificial intelligence repository focusing on intelligent system integration and automated workflows.</p>
 <div class="chips"><span>AI Integration</span><span>Python</span><span>LLMs</span></div>
-<p class="more"><a href="https://github.com/sajal19-sketch/BharatAi" target="_blank" rel="noopener">View on GitHub</a></p></article>
+<p class="more"><a href="https://github.com/sajal19-sketch/BharatAi" target="_blank" rel="noopener">View on GitHub</a> &nbsp;·&nbsp; <a href="https://bharatai-1-u2fs.onrender.com/" target="_blank" rel="noopener">Live Website</a></p></article>
+
+<!-- Project 6 -->
+<article class="proj" style="--g:linear-gradient(160deg,#3b82f6,#1e3a8a 85%)"><span class="glyph" aria-hidden="true">EDU</span>
+<h3>Algoma Hub</h3>
+<p>A custom personal utility I built to extract, organize, and easily access my coursework, subject PDFs, and official college data from Algoma University in one streamlined interface.</p>
+<div class="chips"><span>Web App</span><span>Data Extraction</span><span>Vercel</span></div>
+<p class="more"><a href="https://github.com/sajal19-sketch/algoma-project" target="_blank" rel="noopener">View on GitHub</a> &nbsp;·&nbsp; <a href="https://algoma-project.vercel.app" target="_blank" rel="noopener">Live Website</a></p></article>
+
 </div>
 <p class="more">Also on GitHub: <a href="https://github.com/sajal19-sketch/cosc3506-team-10" target="_blank" rel="noopener">cosc3506-team-10</a> (JavaScript) and <a href="https://github.com/sajal19-sketch/cosc3506-phase2" target="_blank" rel="noopener">cosc3506-phase2</a> (Python).</p>
 </section>
@@ -191,7 +204,7 @@ h2{font-size:clamp(34px,5.5vw,60px);margin-bottom:12px}
 <p class="kick">Episode 4</p><h2>My skills</h2>
 <div class="grp"><h3>Languages</h3><div class="chips"><span>Python</span><span>JavaScript</span><span>HTML/CSS</span></div></div>
 <div class="grp"><h3>Tools and frameworks</h3><div class="chips"><span>Playwright</span><span>Git</span><span>GitHub</span><span>Chrome Extension API (Manifest V3)</span></div></div>
-<div class="grp"><h3>Backend and databases</h3><div class="chips"><span>PostgreSQL</span><span>Supabase</span><span>Render</span><span>REST APIs</span></div></div>
+<div class="grp"><h3>Backend and databases</h3><div class="chips"><span>PostgreSQL</span><span>Supabase</span><span>Render</span><span>Vercel</span><span>REST APIs</span></div></div>
 <div class="grp"><h3>AI</h3><div class="chips"><span>AI Integration</span><span>Prompt Engineering</span><span>LLM Implementation</span><span>Automated Data Parsing</span></div></div>
 <div class="grp"><h3>Security and risk</h3><div class="chips"><span>Risk assessment</span><span>NIST CSF</span><span>GDPR</span><span>PCI DSS</span><span>SOC</span></div></div>
 <div class="grp"><h3>Spoken languages</h3><div class="chips"><span>English</span><span>Gujarati</span><span>French (conversational)</span></div></div>
