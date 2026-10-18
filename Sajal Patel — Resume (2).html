@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sajal Patel — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+@property --a{syntax:'<color>';inherits:true;initial-value:#ff2d55}
+@property --b{syntax:'<color>';inherits:true;initial-value:#2a1060}
+:root{--a:#ff2d55;--b:#2a1060;--ink:#f4f4f8;--mute:#a4a6b8;--panel:#0c0d14;--f1:'Anton','Impact',sans-serif;--f2:'Manrope',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0;min-height:100%;background:#08080d;color:var(--ink);font-family:var(--f2)}
+.bg{position:fixed;inset:0;background:radial-gradient(60% 65% at 18% 12%,var(--a),transparent 70%),radial-gradient(70% 70% at 88% 92%,var(--b),transparent 70%),#0a0a10;transition:--a 1.4s ease,--b 1.4s ease}
+.grain{position:fixed;inset:0;opacity:.32;mix-blend-mode:overlay;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.stage{position:relative;min-height:100vh;display:grid;place-items:center;padding:18px 22px;perspective:1500px}
+.wrap{width:100%;animation:enter 1.6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes enter{from{opacity:0;transform:rotateX(52deg) rotateY(-24deg) translateY(160px) scale(.7)}to{opacity:1;transform:none}}
+.device{position:relative;height:calc(100vh - 36px);min-height:520px;background:var(--panel);border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 50px 90px -20px rgba(0,0,0,.65),0 0 0 6px rgba(255,255,255,.06);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out;transform-style:preserve-3d}
+.nav{position:absolute;inset:0 0 auto;height:56px;display:flex;align-items:center;gap:14px;padding:0 20px;z-index:5;background:linear-gradient(#0c0d14 60%,transparent)}
+.logo{font:26px var(--f1);color:var(--a);letter-spacing:.02em;transition:color 1.4s}
+.nav nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.nav button{all:unset;cursor:pointer;padding:8px 12px;border-radius:8px;font-size:13px;font-weight:600;color:var(--mute);white-space:nowrap}
+.nav button:hover{color:var(--ink)}
+.nav button.on{color:var(--ink);background:rgba(255,255,255,.1)}
+button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.loc{margin-left:auto;font-size:12px;color:var(--mute);white-space:nowrap}
+.screen{position:absolute;inset:56px 0 4px;overflow:auto;padding:12px 28px 28px;opacity:0;visibility:hidden;transform:translateY(18px) scale(.985);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1),visibility 0s .5s}
+.screen.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.bar{position:absolute;left:0;bottom:0;height:4px;width:20%;background:linear-gradient(90deg,var(--a),#fff0);transition:width .8s ease}
+.kick{font-size:13px;color:var(--mute);margin:0 0 6px}
+h1,h2,h3{font-family:var(--f1);font-weight:400;margin:0;line-height:.95;letter-spacing:.005em}
+h1{font-size:clamp(54px,11vw,138px)}
+h1 span{display:inline-block;animation:ch .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(1s + var(--i)*55ms)}
+@keyframes ch{from{opacity:0;transform:translateY(70%) rotateX(-80deg)}to{opacity:1;transform:none}}
+h2{font-size:clamp(34px,5.5vw,60px);margin-bottom:12px}
+.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;min-height:300px}
+.hero p.lead{max-width:50ch;color:#d3d4e0;line-height:1.55;margin:14px 0 18px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{all:unset;cursor:pointer;padding:11px 20px;border-radius:8px;font-weight:800;font-size:14px;background:#f2f2f6;color:#0b0b12}
+.btn.ghost{background:rgba(255,255,255,.14);color:var(--ink)}
+.btn:hover{filter:brightness(1.12)}
+.namerow{display:flex;align-items:flex-start;justify-content:space-between;gap:0;margin-bottom:0}
+.namerow h1,.hero p.lead,.hero .btns{position:relative;z-index:2}
+.photo .cut{transform:none!important;transition:none!important}
+.photo{flex:none;align-self:flex-start;width:min(705px,58vw);aspect-ratio:4/5;position:relative;margin:-190px 190px -390px auto;perspective:700px;z-index:1}
+.photo .glow{position:absolute;left:50%;top:44%;width:92%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,var(--a) 0%,transparent 66%);opacity:.55;filter:blur(18px);animation:pulse 4s ease-in-out infinite;transition:background 1.4s}
+.photo .ring{position:absolute;left:50%;top:44%;width:84%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:2px solid var(--a);border-top-color:transparent;border-left-color:transparent;opacity:.85;animation:spin 9s linear infinite;transition:border-color 1.4s}
+.photo .ring.r2{width:96%;border-width:1px;border-color:rgba(255,255,255,.35);border-bottom-color:transparent;border-right-color:transparent;animation-duration:15s;animation-direction:reverse}
+.photo .cut{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .25s ease-out;will-change:transform}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;filter:contrast(1.08) saturate(1.1) drop-shadow(0 0 1px rgba(255,255,255,.35)) drop-shadow(0 0 18px rgba(255,255,255,.22)) drop-shadow(0 22px 24px rgba(0,0,0,.6));-webkit-mask-image:linear-gradient(#000 82%,transparent 99%);mask-image:linear-gradient(#000 82%,transparent 99%)}
+.photo .scan{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;background:linear-gradient(180deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);background-size:100% 220%;-webkit-mask:var(--cut) center/contain no-repeat;mask:var(--cut) center/contain no-repeat;animation:scan 4.5s 3.4s ease-in-out infinite}
+@keyframes scan{0%{background-position:0 130%}60%,100%{background-position:0 -30%}}
+@keyframes pulse{0%,100%{opacity:.4;transform:translate(-50%,-50%) scale(.96)}50%{opacity:.7;transform:translate(-50%,-50%) scale(1.05)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.94)}to{opacity:1;transform:none}}
+.mono{justify-self:center;width:min(260px,60vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font:120px var(--f1);color:transparent;-webkit-text-stroke:2px var(--a);position:relative;transition:-webkit-text-stroke-color 1.4s}
+.mono::before,.mono::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.2);animation:spin 14s linear infinite}
+.mono::after{inset:-18px;border-style:dashed;animation-duration:26s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.row-h{font:22px var(--f1);margin:20px 0 10px;letter-spacing:.02em}
+.eps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.ep{all:unset;cursor:pointer;position:relative;aspect-ratio:16/10;border-radius:10px;overflow:hidden;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--g);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.ep:hover,.ep:focus-visible{transform:translateY(-6px) scale(1.04);box-shadow:0 18px 30px -10px rgba(0,0,0,.7)}
+.ep small{font-size:11px;font-weight:800;opacity:.85}
+.ep b{font:21px var(--f1);font-weight:400;line-height:1}
+.ep i{position:absolute;right:-4px;top:-14px;font:90px var(--f1);font-style:normal;opacity:.18}
+.ep::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:var(--w,0%);background:#ff2d55;transition:width .6s}
+.ep:hover::after{width:100%}
+.stats{display:flex;gap:28px;margin:18px 0}
+.stats div b{display:block;font:56px var(--f1);font-weight:400;color:var(--a);transition:color 1.4s}
+.stats div span{font-size:13px;color:var(--mute)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.three .proj{min-height:360px;padding:18px}.three .proj h3{font-size:clamp(28px,3.2vw,40px)}
+.proj a,.more a{color:#fff;font-weight:800;font-size:13px}
+.more{margin-top:16px;color:var(--mute);font-size:13px}
+.steps{display:grid;gap:12px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:rgba(255,255,255,.07);border-radius:12px;padding:14px 16px 14px 56px;position:relative;line-height:1.5;font-size:14px}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:8px;font:30px var(--f1);color:var(--a);transition:color 1.4s}
+.steps b{display:block;font-weight:800}
+.txt{color:#d3d4e0;line-height:1.65;max-width:60ch}
+.proj{position:relative;border-radius:14px;padding:22px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--g);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.proj:hover{transform:translateY(-6px)}
+.proj .yr{position:absolute;top:14px;right:14px;font-size:12px;font-weight:800;background:rgba(0,0,0,.35);padding:4px 10px;border-radius:99px}
+.proj .glyph{position:absolute;right:-20px;top:30px;font:190px/1 var(--f1);opacity:.15}
+.proj h3{font-size:clamp(34px,4.6vw,52px);margin-bottom:10px}
+.proj p{margin:0 0 14px;line-height:1.5;font-size:14px;max-width:44ch;color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:12px;font-weight:600;padding:5px 10px;border-radius:99px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18)}
+.grp{margin-bottom:18px}
+.grp h3{font-size:22px;margin-bottom:8px;color:var(--a);transition:color 1.4s}
+.grp .chips span{font-size:14px;padding:8px 14px;background:rgba(255,255,255,.08)}
+.edu{border-left:3px solid var(--a);padding:2px 0 2px 16px;margin-bottom:20px;transition:border-color 1.4s}
+.edu b{font:28px var(--f1);font-weight:400;display:block}
+.edu span{color:var(--mute);font-size:14px}
+@media(max-width:760px){
+.three{grid-template-columns:1fr}.photo{width:150px;margin:0 0 -40px -6px}
+.device{height:auto;min-height:640px}
+.hero,.two{grid-template-columns:1fr}.mono{display:none}
+.eps{display:flex;overflow-x:auto;gap:10px;padding-bottom:8px;scroll-snap-type:x mandatory}.ep{flex:0 0 62%;scroll-snap-align:start}
+.loc{display:none}.screen{padding:8px 16px 24px}
+.stats{gap:18px}.stats div b{font-size:44px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}.device{transform:none!important}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="grain"></div>
+<main class="stage"><div class="wrap"><div class="device" id="dev">
+<header class="nav"><b class="logo">SP</b>
+<nav id="nav"><button data-s="home">Home</button><button data-s="story">The story</button><button data-s="projects">Projects</button><button data-s="ext">Chrome extension</button><button data-s="skills">Skills</button><button data-s="edu">Education &amp; contact</button></nav>
+<span class="loc">Brampton / Oshawa, ON</span></header>
+
+<section class="screen on" id="home">
+<div class="hero"><div>
+<p class="kick">Computer Science student · Algoma University</p>
+<div class="namerow"><h1 id="name" aria-label="Sajal Patel"></h1></div>
+<p class="lead">I build practical software: Python backends, browser automation, cloud-deployed APIs and security audits. Four projects on GitHub so far, and I’m looking for the next one to build.</p>
+<div class="btns"><button class="btn" id="play">▶ Play intro</button><button class="btn ghost" data-s="projects">See projects</button><button class="btn ghost" data-s="edu">Contact</button></div>
+</div></div>
+<p class="row-h">Continue exploring</p>
+<div class="eps">
+<button class="ep" data-s="story" style="--g:linear-gradient(135deg,#5b21b6,#1e1b4b)"><i>1</i><small>Episode 1</small><b>The full story</b></button>
+<button class="ep" data-s="projects" style="--g:linear-gradient(135deg,#be123c,#4c0519)"><i>2</i><small>Episode 2</small><b>My projects</b></button>
+<button class="ep" data-s="ext" style="--g:linear-gradient(135deg,#f59e0b,#9a3412)"><i>3</i><small>Episode 3</small><b>Chrome extension</b></button>
+<button class="ep" data-s="skills" style="--g:linear-gradient(135deg,#0e7490,#1d4ed8)"><i>4</i><small>Episode 4</small><b>My skills</b></button>
+<button class="ep" data-s="edu" style="--g:linear-gradient(135deg,#15803d,#134e4a)"><i>5</i><small>Episode 5</small><b>Education</b></button>
+</div></section>
+
+<section class="screen" id="story">
+<p class="kick">Episode 1</p><h2>The full story</h2>
+<p class="txt">I’m a Computer Science student at Algoma University with a passion for software development, automation and backend engineering. I like building tools that solve a real, annoying problem, then putting them online so they keep working without me.</p>
+<div class="stats"><div><b>4</b><span>projects on GitHub</span></div><div><b>3</b><span>coding languages</span></div><div><b>3</b><span>spoken languages</span></div></div>
+<p class="txt">I speak English, Gujarati and conversational French, and I’m currently working through the Google Cybersecurity Professional Certificate.</p>
+<p class="txt">I like bringing AI into the things I build, and I’m getting good at AI prompt writing. I also make a point of learning something new in AI every day, and I’m ready to explore whatever comes next.</p>
+</section>
+
+<section class="screen" id="projects">
+<p class="kick">Episode 2</p><h2>My projects</h2>
+<div class="three">
+<article class="proj" style="--g:linear-gradient(160deg,#e11d48,#7f1d1d 85%)"><span class="yr">Sept 2026</span><span class="glyph" aria-hidden="true">API</span>
+<h3>Academic API Deployment</h3>
+<p>A course registration REST API in Python, deployed live on Render. A PostgreSQL database on Supabase holds student verification records.</p>
+<div class="chips"><span>Python</span><span>REST API</span><span>PostgreSQL</span><span>Supabase</span><span>Render</span></div>
+<p class="more"><a href="https://github.com/sajal19-sketch/course-registration-api" target="_blank" rel="noopener">View on GitHub</a></p></article>
+<article class="proj" style="--g:linear-gradient(160deg,#7c3aed,#1e1b4b 85%)"><span class="glyph" aria-hidden="true">DB</span>
+<h3>Immxrsive Platform</h3>
+<p>A multi-page web platform with a Python backend and a database, including intake, upload, student and project pages.</p>
+<div class="chips"><span>Python</span><span>HTML/CSS</span><span>JavaScript</span><span>Database</span></div>
+<p class="more"><a href="https://github.com/sajal19-sketch/immxrsive-platform" target="_blank" rel="noopener">View on GitHub</a></p></article>
+<article class="proj" style="--g:linear-gradient(160deg,#0891b2,#164e63 85%)"><span class="glyph" aria-hidden="true">SEC</span>
+<h3>Botium Toys Security Audit</h3>
+<p>A security audit and risk assessment against NIST CSF, GDPR, PCI DSS and SOC. It rates overall risk at 8/10, maps compliance gaps and recommends fixes.</p>
+<div class="chips"><span>Risk assessment</span><span>NIST CSF</span><span>GDPR</span><span>PCI DSS</span></div>
+<p class="more"><a href="https://github.com/sajal19-sketch/Botium-Toys-Security-Audit" target="_blank" rel="noopener">View on GitHub</a></p></article>
+<article class="proj" style="--g:linear-gradient(160deg,#f97316,#14532d 85%)"><span class="glyph" aria-hidden="true">AI</span>
+<h3>Bharat AI</h3>
+<p>An AI project from my GitHub, built around bringing AI integration into a practical tool.</p>
+<div class="chips"><span>AI integration</span><span>Prompt writing</span><span>GitHub</span></div>
+<p class="more"><a href="https://github.com/sajal19-sketch?tab=repositories" target="_blank" rel="noopener">View on GitHub</a></p></article>
+<article class="proj" style="--g:linear-gradient(160deg,#0ea5e9,#312e81 85%)"><span class="glyph" aria-hidden="true">AU</span>
+<h3>Algoma Project</h3>
+<p>A project from my GitHub, built during my studies at Algoma University.</p>
+<div class="chips"><span>Algoma University</span><span>GitHub</span></div>
+<p class="more"><a href="https://github.com/sajal19-sketch?tab=repositories" target="_blank" rel="noopener">View on GitHub</a></p></article>
+</div>
+<p class="more">Also on GitHub: <a href="https://github.com/sajal19-sketch/cosc3506-team-10" target="_blank" rel="noopener">cosc3506-team-10</a> (JavaScript) and <a href="https://github.com/sajal19-sketch/cosc3506-phase2" target="_blank" rel="noopener">cosc3506-phase2</a> (Python).</p>
+</section>
+
+<section class="screen" id="ext">
+<p class="kick">Episode 3</p><h2>Chrome extension contribution</h2>
+<div class="two">
+<article class="proj" style="--g:linear-gradient(160deg,#f59e0b,#9a3412 85%)"><span class="yr">Aug 2026</span><span class="glyph" aria-hidden="true">MV3</span>
+<h3>Ontario Parks Campground Monitor</h3>
+<p>A Google Chrome extension on the Manifest V3 architecture that monitors high-demand campsites such as Killbear Provincial Park, so nobody has to refresh the page by hand.</p>
+<div class="chips"><span>JavaScript</span><span>Manifest V3</span><span>Content scripts</span><span>DOM parsing</span></div>
+<p class="more"><a href="https://github.com/sajal19-sketch/ontario-parks-extension" target="_blank" rel="noopener">View on GitHub</a></p></article>
+<ol class="steps">
+<li><b>Watch</b>JavaScript content scripts keep reading the reservation site’s DOM for real-time updates.</li>
+<li><b>Detect</b>The moment a campsite opens up, the extension spots the vacancy.</li>
+<li><b>Alert</b>A custom audio alert fires right away, which speeds up the booking process.</li>
+</ol></div></section>
+
+<section class="screen" id="skills">
+<p class="kick">Episode 4</p><h2>My skills</h2>
+<div class="grp"><h3>Languages</h3><div class="chips"><span>Python</span><span>JavaScript</span><span>HTML/CSS</span></div></div>
+<div class="grp"><h3>Tools and frameworks</h3><div class="chips"><span>Playwright</span><span>Git</span><span>GitHub</span><span>Chrome Extension API (Manifest V3)</span></div></div>
+<div class="grp"><h3>Backend and databases</h3><div class="chips"><span>PostgreSQL</span><span>Supabase</span><span>Render</span><span>REST APIs</span></div></div>
+<div class="grp"><h3>AI</h3><div class="chips"><span>AI integration</span><span>AI prompt writing</span><span>Learning something new in AI every day</span><span>Ready to explore</span></div></div>
+<div class="grp"><h3>Security and risk</h3><div class="chips"><span>Risk assessment</span><span>NIST CSF</span><span>GDPR</span><span>PCI DSS</span><span>SOC</span></div></div>
+<div class="grp"><h3>Spoken languages</h3><div class="chips"><span>English</span><span>Gujarati</span><span>French (conversational)</span></div></div>
+</section>
+
+<section class="screen" id="edu">
+<p class="kick">Episode 5</p><h2>Education and contact</h2>
+<div class="edu"><b>Bachelor’s in Computer Science</b><span>Algoma University, Brampton, ON</span></div>
+<div class="edu"><b>Google Cybersecurity Professional Certificate</b><span>Coursera · enrolled Dec 2025</span></div>
+<p class="row-h">Get in touch</p>
+<div class="btns"><a class="btn" href="mailto:sajal.19kp@gmail.com" style="text-decoration:none;display:inline-block">sajal.19kp@gmail.com</a><a class="btn ghost" href="https://github.com/sajal19-sketch" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">GitHub</a><a class="btn ghost" href="https://www.linkedin.com/in/sajal-patel-6bb560326" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">LinkedIn</a></div>
+</section>
+<div class="bar" id="bar"></div>
+</div></div></main>
+<script>
+const S=['home','story','projects','ext','skills','edu'],
+C={home:['#ff2d55','#2a1060'],story:['#7c3aed','#0b2a6f'],projects:['#e11d48','#1e1b4b'],ext:['#f59e0b','#7a1d1d'],skills:['#06b6d4','#1d4ed8'],edu:['#22c55e','#0f3d3e']},
+root=document.documentElement,seen={};let t=null,idx=0;
+(function(){const n=document.getElementById('name');let i=0;n.innerHTML=['SAJAL','PATEL'].map(w=>[...w].map(c=>`<span style="--i:${i++}">${c}</span>`).join('')).join('<br>')})();
+function go(id){idx=S.indexOf(id);seen[id]=1;
+document.querySelectorAll('.screen').forEach(s=>{s.classList.toggle('on',s.id===id);if(s.id===id)s.scrollTop=0});
+document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.s===id));
+root.style.setProperty('--a',C[id][0]);root.style.setProperty('--b',C[id][1]);
+document.getElementById('bar').style.width=((idx+1)/S.length*100)+'%';
+document.querySelectorAll('.ep').forEach(e=>e.style.setProperty('--w',seen[e.dataset.s]?'100%':'0%'))}
+function stop(){clearInterval(t);t=null;document.getElementById('play').textContent='▶ Play intro'}
+function play(){if(t)return stop();document.getElementById('play').textContent='❚❚ Stop';
+t=setInterval(()=>{const n=(idx+1)%S.length;go(S[n]);if(n===0)stop()},3600);go(S[(idx+1)%S.length])}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(b){stop();go(b.dataset.s)}});
+document.getElementById('play').addEventListener('click',e=>{e.stopPropagation();play()});
+const dev=document.getElementById('dev');
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&matchMedia('(pointer:fine)').matches)
+document.addEventListener('pointermove',e=>{dev.style.setProperty('--ry',((e.clientX/innerWidth-.5)*10)+'deg');dev.style.setProperty('--rx',(-(e.clientY/innerHeight-.5)*7)+'deg')});
+go('home');
+</script>
+<script>
+(function(){var p=document.getElementById('photo'),c=document.getElementById('cut');if(!p||!c)return;
+document.addEventListener('mousemove',function(e){var r=p.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));c.style.transform='rotateY('+(x*12)+'deg) rotateX('+(-y*8)+'deg)';});
+document.addEventListener('mouseleave',function(){c.style.transform='';});})();
+</script>
+</body>
+</html>
