@@ -30,6 +30,16 @@ Episode 2
 
 ## My projects
 
+Nov 2026Swift
+
+### Hangtime
+
+A glassy notch bar for macOS, with Dangle: a Claude Code companion that hangs from the notch, shows what the AI agent is doing and lets you approve its requests without touching the terminal.
+
+SwiftSwiftUImacOSClaude Code hooks
+
+[View on GitHub](https://github.com/sajal19-sketch/hangtime)
+
 Sept 2026API
 
 ### Academic API Deployment
